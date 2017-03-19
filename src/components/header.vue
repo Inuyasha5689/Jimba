@@ -45,7 +45,7 @@
     .image {
         padding-top: 20px;
         position: relative;
-        background-image: url("http://d.facdn.net/art/jimdevries12/1459954194/1459954194.jimdevries12_ice_cream_ych_.png");
+        background-image: url(../assets/1459954194.jimdevries12_ice_cream_ych.png);
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
