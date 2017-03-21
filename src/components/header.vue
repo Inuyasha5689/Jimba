@@ -24,7 +24,7 @@
             </div>
         </nav>
         <header class="jumbotron">
-            <div class=" container image">
+            <div class=" container image" :style="{backgroundImage: 'url(' + image + ')'}" id="jumbo">
             </div>
             <h1 id="heading">Jimba's Website!</h1>
         </header>
@@ -33,6 +33,40 @@
 
 <script>
 
+    export default {
+        data() {
+            return {
+                banners: [
+                    'src/assets/1459954194.jimdevries12_ice_cream_ych.png',
+                    'src/assets/1472772497.jimdevries12_1471310634.kofiloki_jim_background.png',
+                    'src/assets/1480852337.jimdevries12_9tybizm_-_imgur.png',
+                    'src/assets/1484757945.shiki-kun-baka_всыф.png'
+                ],
+                image: "src/assets/1459954194.jimdevries12_ice_cream_ych.png"
+            }
+        },
+        methods: {
+            cycleBanner() {
+                var vm = this;
+                var i = 1;
+                let inter = function () {
+                    if ( i >= vm.banners.length ){
+                        i = 0;
+                    }
+                    vm.image =vm.banners[i];
+                    i++;
+
+                    console.log(vm.image);
+                };
+                var intervalID = setInterval(inter, 5000);
+            }
+        },
+        mounted() {
+            var vm = this;
+            vm.cycleBanner();
+        }
+
+    }
 </script>
 
 <style scoped="true">
@@ -45,7 +79,6 @@
     .image {
         padding-top: 20px;
         position: relative;
-        background-image: url(../assets/1459954194.jimdevries12_ice_cream_ych.png);
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
